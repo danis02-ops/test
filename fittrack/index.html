@@ -7,6 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="FitTrack" />
+    <link rel="manifest" href="/test/manifest.json" />
     <link rel="apple-touch-icon" href="/test/icon-192.png" />
     <title>FitTrack</title>
     <script>
@@ -20,5 +21,12 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/test/sw.js', { scope: '/test/' });
+        });
+      }
+    </script>
   </body>
 </html>
