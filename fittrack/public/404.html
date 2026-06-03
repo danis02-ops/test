@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script>
+      const path = window.location.pathname.replace('/test', '') || '/';
+      sessionStorage.setItem('redirect', path);
+      window.location.replace('/test/');
+    </script>
+  </head>
+  <body></body>
+</html>

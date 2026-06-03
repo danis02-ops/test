@@ -9,7 +9,7 @@ import Exercises from './pages/Exercises';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/test">
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Dashboard />} />
